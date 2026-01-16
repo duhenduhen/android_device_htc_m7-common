@@ -398,7 +398,7 @@ service netmgrd /system/bin/netmgrd
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
     user root
-    group root readproc
+    group root system readproc wakelock
     disabled
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
@@ -410,7 +410,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 service qmuxd /system/bin/qmuxd
     class core
     user root
-    group radio audio gps wakelock oem_2950
+    group radio audio bluetooth gps diag wakelock log oem_2950
 
 service qseecomd /system/bin/qseecomd
     class core
