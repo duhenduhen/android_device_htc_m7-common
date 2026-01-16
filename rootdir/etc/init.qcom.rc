@@ -365,6 +365,12 @@ on boot
     # Bluetooth MAC address
     chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
 
+    # Set subsystem restart level
+    # 1 = SOC
+    # 2 = COUPLED
+    # 3 = INDEPENDENT
+    write /sys/module/subsystem_restart/parameters/restart_level 3
+
     # Wifi firmware reload path
     chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
 
