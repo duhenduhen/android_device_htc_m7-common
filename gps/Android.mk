@@ -24,6 +24,8 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(BOARD_VENDOR),htc)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+ifneq ($(BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE),)
+LOCAL_PATH := $(call my-dir)
+
+include $(call all-makefiles-under,$(LOCAL_PATH))
 endif

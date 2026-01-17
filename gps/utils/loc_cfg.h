@@ -1,4 +1,4 @@
-/* Copyright (c) 2011-2012, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011-2013, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -36,16 +36,11 @@
 #define LOC_MAX_PARAM_STRING               80
 #define LOC_MAX_PARAM_LINE                 80
 
-// Don't want to overwrite the pre-def'ed value
-#ifndef GPS_CONF_FILE
-#define GPS_CONF_FILE            "/etc/gps.conf"   //??? platform independent
-#endif
-
 #define UTIL_READ_CONF_DEFAULT(filename) \
-    loc_read_conf((filename), NULL, 0);
+loc_read_conf((filename), NULL, 0);
 
 #define UTIL_READ_CONF(filename, config_table) \
-            loc_read_conf((filename), (config_table), sizeof(config_table) / sizeof(config_table[0]))
+loc_read_conf((filename), (config_table), sizeof(config_table) / sizeof(config_table[0]))
 
 /*=============================================================================
  *
@@ -58,8 +53,8 @@ typedef struct
   void                          *param_ptr;
   uint8_t                       *param_set;   /* was this value set by config file? */
   char                           param_type;  /* 'n' for number,
-                                                 's' for string,
-                                                 'f' for float */
+  's' for string,
+  'f' for float */
 } loc_param_s_type;
 
 /*=============================================================================
@@ -70,18 +65,18 @@ typedef struct
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+  #endif
 
-/*=============================================================================
- *
- *                       MODULE EXPORTED FUNCTIONS
- *
- *============================================================================*/
-extern void loc_read_conf(const char* conf_file_name,
-                          loc_param_s_type* config_table,
-                          uint32_t table_length);
+  /*=============================================================================
+   *
+   *                       MODULE EXPORTED FUNCTIONS
+   *
+   *============================================================================*/
+  extern void loc_read_conf(const char* conf_file_name,
+                            loc_param_s_type* config_table,
+                            uint32_t table_length);
 
-#ifdef __cplusplus
+  #ifdef __cplusplus
 }
 #endif
 
