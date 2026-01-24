@@ -97,6 +97,10 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/bin/hwservicemanager=22 \
     /system/bin/healthd=22
 
+# Vendor Security patch level
+BOOT_SECURITY_PATCH := 2015-08-05
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
+
 # Wifi
 BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
