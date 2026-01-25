@@ -18,7 +18,6 @@
 
 import common
 import re
-import os
 
 def FullOTA_InstallEnd(info):
   info.script.Mount("/system")
