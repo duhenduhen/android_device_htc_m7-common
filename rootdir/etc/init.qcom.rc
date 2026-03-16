@@ -209,8 +209,6 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/dsps 0771 system system
 
-    mkdir /dev/socket/mpdecision 2770 root system
-
     # QC audio/radio
     mkdir /data/audio 0775 media audio
     chmod 2775 /data/audio
@@ -319,7 +317,7 @@ on boot
     write /sys/kernel/debug/pm8921-dbg/addr 0x1F5
     write /sys/kernel/debug/pm8921-dbg/data 0xE1
 
-	#write /proc/sys/net/ipv6/conf/p2p0/disable_ipv6 1
+	# write /proc/sys/net/ipv6/conf/p2p0/disable_ipv6 1
 
     # Create symlink for fb1 as HDMI
     symlink /sys/class/graphics/fb1 /dev/graphics/hdmi
@@ -345,8 +343,6 @@ on boot
     chown radio system /sys/camera_led_status/led_ril_status
 
     chown radio radio /sys/htc_monitor_status/htc_monitor_param
-
-    chown system system /sys/android_touch/unlock
 
     chown media media /sys/keyboard/vol_wakeup
 
